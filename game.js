@@ -124,7 +124,11 @@ function treatButtonClick(jqElem) {
   }
 }
 
-$("div.btn").on("click", treatButtonClick.bind($(this))); //eventhandler luistert zolang je hem niet afzet
+$("div.btn").on("click", treatButtonClick.bind($(this)));
+/* eventhandler luistert zolang je hem niet afzet
+treatButtonClick.bind($(this)) is een nieuwefunctie eventhandler-functie met de context meegegeven als argument in bind. Hier kan dus
+geen call of apply toegepast worden vermits op die manier geen functie gecreëerd wordt maar een proces, nl.
+het toepassen van de functie met de waarde voor this die als argumend van de call of apply meegegevn worden */
 /*
 Dus in dit programma zijn 2 evenhandlers aan het werk:
 1/ treatButtonClick om een druk op een button te behandelen
